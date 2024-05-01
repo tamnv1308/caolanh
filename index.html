@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" type="image/png" href="image/favicon.ico">
+    <title>
+        💓Chiến Thần Cao Lãnh💓
+    </title>
+    <link type="text/css" rel="stylesheet" href="./renxi/default.css">
+     <!-- Các thẻ khác trong phần head -->
+    <style type="text/css">
+        .say {
+            font-style: italic;
+            font-size: 12px; /* Điều chỉnh kích thước font tại đây */
+        }
+    </style>    
+    <style type="text/css">
+        .say {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay="autoplay">
+        <source src="music/I-Do-911.mp3" type="audio/mp3" />
+    </audio>  
+    <div id="main">
+        <div id="error">Trình duyệt của bạn không được hỗ trợ. Hoặc sử dụng (<a href="http://www.google.cn/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)</div>
+        <div id="wrap">
+            <div id="text">
+            
+                <div id="code">
+                    <font color="#0000FF"><span class="say">Chào em yêu,</span><br>
+                    <span class="say"> </span><br>
+                    <span class="say">Em là người con gái anh yêu nhất :)</span><br>
+                    <span class="say">Anh tên là: TÂM (người ta bảo anh rất chung tình và cực khó tính)</span><br>
+                    <span class="say">Tuyên ngôn của anh là: Thích màu sắc nhiều màu, thích đi nhậu nhưng không ghiền và ước gì là bồ của em</span><br>
+                    <span class="say">Hôm nay, ngày lành tháng tốt, anh viết đơn này trước tiên là muốn ngỏ lời yêu em, hi vọng em chấp nhận. Lần đầu tiên gặp em, trong anh đã có cảm giác khó tả, cứ như là yêu từ kiếp trước ý! Từ hôm ấy, anh mơ mộng và đã có suy diễn đến việc mình là ủa nhau. Hãy nhắm mắt lại và cảm nhận từng lời, từng câu chữ mà anh viết cho em. Người ta bảo cọc cắn, trầm tính, khó chịu nhưng lại thật lòng, chân chất nên ai cũng quý, cũng yêu. Anh đã thấy một niềm hi vọng trong mắt em, anh biết em cũng hiểu ý anh mà... Nếu lỡ có giận thì giận yêu anh nha, có ghét thì ghét yêu anh nha, mà có lỡ thương thì... thương thật em nha! Nhiều lúc anh thầm nghĩ, không biết là chúng mình có duyên mà vồ lấy nhau không nhưng anh muốn em biết một điều rằng: Anh đang 'vồ' em đấy. Giờ thì anh hỏi em đây :</span><br>
+                    <span class="say">- ANH CÓ THỂ ĐƯỢC YÊU EM KHÔNG (ngại quá rồi)</span><br>
+                    <span class="say">Trả lời anh nha bé! Em không cần phải nói gì nhiều, anh chỉ cần em ‘KÝ TÊN' vào đây là đủ. Nếu em không đồng ý, anh sẽ viết bài khác tặng em, Ok cưng?</span><br>
+                    <span class="say">Mong tin em!!!</span>
+                    <br>
+                    <span class="say"><span class="space"></span> -- Yêu em thật nhiều --</span>
+                </font></p>
+                  <!-- Thêm nút YES và NO -->
+    <button class="heartbeat" onclick="rainHearts()">YES</button>
+
+    <button class="heartbeat">NO</button>
+            </div>
+        </div>
+       
+        <canvas id="canvas" width="1100" height="680"></canvas>
+    </div>
+</div>
+
+<script type="text/javascript">
+   var speed = 10; // Thời gian chờ giữa các ký tự, càng thấp càng nhanh
+
+// Hàm hiển thị chữ theo từng ký tự
+function type() {
+    var text = content.substring(0, i);
+    document.getElementById('code').innerHTML = text;
+    i++;
+    var char = text.slice(-1);
+    if (char === "<") {
+        i = content.indexOf(">", i) + 1;
+    }
+    if (i <= content.length) {
+        setTimeout(type, speed); // Thay đổi thời gian ở đây
+    }
+}
+
+// Bắt đầu hiển thị chữ
+type();
+
+</script>
+
+<script type="text/javascript" src="./renxi/jquery.min.js"></script>
+<script type="text/javascript" src="./renxi/jscex.min.js"></script>
+<script type="text/javascript" src="./renxi/jscex-parser.js"></script>
+<script type="text/javascript" src="./renxi/jscex-jit.js"></script>
+<script type="text/javascript" src="./renxi/jscex-builderbase.min.js"></script>
+<script type="text/javascript" src="./renxi/jscex-async.min.js"></script>
+<script type="text/javascript" src="./renxi/jscex-async-powerpack.min.js"></script>
+<script type="text/javascript" src="./renxi/functions.js" charset="utf-8"></script>
+<script type="text/javascript" src="./renxi/love.js" charset="utf-8"></script>
+<script type="text/javascript">
+    (function(){
+        var canvas = $('#canvas');
+
+        if (!canvas[0].getContext) {
+            $("#error").show();
+            return false;
+        }
+
+        var width = canvas.width();
+        var height = canvas.height();        
+        canvas.attr("width", width);
+        canvas.attr("height", height);
+        var opts = {
+            seed: {
+                x: width / 2 - 20,
+                color: "rgb(190, 26, 37)",
+                scale: 2
+            },
+            branch: [
+                [535, 680, 570, 250, 500, 200, 30, 100, [
+                    [540, 500, 455, 417, 340, 400, 13, 100, [
+                        [450, 435, 434, 430, 394, 395, 2, 40]
+                    ]],
+                    [550, 445, 600, 356, 680, 345, 12, 100, [
+                        [578, 400, 648, 409, 661, 426, 3, 80]
+                    ]],
+                    [539, 281, 537, 248, 534, 217, 3, 40],
+                    [546, 397, 413, 247, 328, 244, 9, 80, [
+                        [427, 286, 383, 253, 371, 205, 2, 40],
+                        [498, 345, 435, 315, 395, 330, 4, 60]
+                    ]],
+                    [546, 357, 608, 252, 678, 221, 6, 100, [
+                        [590, 293, 646, 277, 648, 271, 2, 80]
+                    ]]
+                ]] 
+            ],
+            bloom: {
+                num: 700,
+                width: 1080,
+                height: 650,
+            },
+            footer: {
+                width: 1200,
+                height: 5,
+                speed: 10,
+            }
+        }
+
+        var tree = new Tree(canvas[0], width, height, opts);
+        var seed = tree.seed;
+        var foot = tree.footer;
+        var hold = 1;
+
+        canvas.click(function(e) {
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            if (seed.hover(x, y)) {
+                hold = 0; 
+                canvas.unbind("click");
+                canvas.unbind("mousemove");
+                canvas.removeClass('hand');
+            }
+        }).mousemove(function(e){
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            canvas.toggleClass('hand', seed.hover(x, y));
+        });
+
+        var seedAnimate = eval(Jscex.compile("async", function () {
+            seed.draw();
+            while (hold) {
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canScale()) {
+                seed.scale(0.95);
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canMove()) {
+                seed.move(0, 2);
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+        }));
+
+        var growAnimate = eval(Jscex.compile("async", function () {
+            do {
+                tree.grow();
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canGrow());
+        }));
+
+        var flowAnimate = eval(Jscex.compile("async", function () {
+            do {
+                tree.flower(2);
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canFlower());
+        }));
+
+        var moveAnimate = eval(Jscex.compile("async", function () {
+            tree.snapshot("p1", 240, 0, 610, 680);
+            while (tree.move("p1", 500, 0)) {
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+            foot.draw();
+            tree.snapshot("p2", 500, 0, 610, 680);
+
+            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
+            canvas.css("background", "#ffe");
+            $await(Jscex.Async.sleep(300));
+            canvas.css("background", "none");
+        }));
+
+        var jumpAnimate = eval(Jscex.compile("async", function () {
+            var ctx = tree.ctx;
+            while (true) {
+                tree.ctx.clearRect(0, 0, width, height);
+                tree.jump();
+                foot.draw();
+                $await(Jscex.Async.sleep(25));
+            }
+        }));
+
+        var textAnimate = eval(Jscex.compile("async", function () {
+            var together = new Date();
+            together.setFullYear(2014,8 , 26); 
+
+            $("#code").show().typewriter();
+            $("#clock-box").fadeIn(500);
+            while (true) {
+                timeElapse(together);
+                $await(Jscex.Async.sleep(1000));
+            }
+        }));
+
+        var runAsync = eval(Jscex.compile("async", function () {
+            $await(seedAnimate());
+            $await(growAnimate());
+            $await(flowAnimate());
+            $await(moveAnimate());
+
+            textAnimate().start();
+
+            $await(jumpAnimate());
+        }));
+
+        runAsync().start();
+    })();
+</script>
+</body>
+</html>
